@@ -46,3 +46,5 @@ $string['tb'] = '{$a} TB';
 $string['selectall'] = 'Select All';
 $string['showfileinfo'] = 'Show file extensions in report?';
 $string['showfileinfo_desc'] = 'This will slow down the report and may cause a timeout';
+$string['privacy:metadata:report_filetrash'] = 'Report filetrash holding table for cron processing';
+$string['privacy:metadata:report_filetrash:userid'] = 'User Id of Report filetrash holding table for cron processing';
