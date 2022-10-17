@@ -97,7 +97,7 @@ class report_filetrash_compare {
                 $file = (string) $fileinfo->getFilename();
                 $path = (string) $fileinfo->getPath();
                 $bytes = (string) $fileinfo->getSize();
-                $size = $this->get_size_format($bytes);
+                $size = $bytes;
                 $mime = $this->get_mime_type($file, $path);
 
             $filenames[$file] = array(
@@ -198,11 +198,13 @@ class report_filetrash_compare {
             if ($orphan['filename'] == 'warning.txt') {
                 continue;
             }
+            $createtime = filectime($orphan['filepath'] . '/' . $orphan['filename']);
             $indexedorphans[$i] = array(
                 'filename' => $orphan['filename'],
                 'filepath' => $orphan['filepath'],
                 'filesize' => $orphan['filesize'],
                 'extension' => $orphan['extension'],
+                'createtime' => userdate($createtime),
                 'filekey' => $i);
         }
         return $indexedorphans;
