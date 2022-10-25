@@ -26,7 +26,7 @@ foreach ($report->orphanedfiles as $file) {
     // Sanity check - is this file really not in the files table - not really needed as above function does this work but just in case.
     $existing = $DB->get_record('files', ['contenthash' => $file['filename']]);
     if (empty($existing)) {
-        unlink($file['filepath'].'/'.$file['filename'], $newpath.'/'.$file['filename']);
+        unlink($file['filepath'].'/'.$file['filename']);
         $count++;
     }
 
